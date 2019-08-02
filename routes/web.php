@@ -5,12 +5,16 @@
 | Web Routes
 |--------------------------------------------------------------------------
 |
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
+| Aquí es donde puede registrar rutas web para su aplicación. Estas El 
+| RouteServiceProvider carga las rutas dentro de un grupo que El 
+| contiene el grupo de middleware "web". ¡Ahora crea algo genial!
 |
 */
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/blog-admin', function () {
+    return view('blog-admin');
 });
