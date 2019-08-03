@@ -17,4 +17,8 @@ Route::get('/', function () {
 
 Route::get('/blog-admin', function () {
     return view('blog-admin');
-});
+})->middleware('auth');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

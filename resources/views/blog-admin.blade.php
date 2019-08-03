@@ -1,12 +1,16 @@
-@extends('layaout/admin')
+@extends('layouts/admin')
 
 @section('titulo','Admin -')
 
 @section('head')
-    {{--Aqui podemos añadir librerias--}}
+     
+ 
+     
 @endsection
+@section('titulo_ventana','Escritorio - Inicio')
 
 @section('contenido')
-    <h1>Esta sera la pantalla de administracion del blog</h1>
+    <h1>Estamos en la ventana de Inicio</h1>
+    <p>Aqui pondremos informacion general del blog</p>
     <p>Esto avanza sigue asi!!!!</p>
 @endsection

@@ -49,12 +49,16 @@
         <div class="navbar-custom-menu">
           <ul class="nav navbar-nav">
             <!-- Messages: style can be found in dropdown.less-->
+            <ul class="navbar-nav mr-auto">
+                  
+            </ul>
 
+            
             <!-- User Account: style can be found in dropdown.less -->
             <li class="dropdown user user-menu">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <small class="bg-red">Online</small>
-                <span class="hidden-xs">Jonatan Iglesias Vicente</span>
+                <small class="bg-green">Online</small>
+                <span class="hidden-xs menu-texto">{{ Auth::user()->name }}</span>
               </a>
               <ul class="dropdown-menu">
                 <!-- User image -->
@@ -69,8 +73,15 @@
                 <!-- Menu Footer-->
                 <li class="user-footer">
 
+                  <div class="pull-left">
+                    <form action="{{url('logout')}}" method="post">
+                        @csrf
+                        <input class="btn btn-default btn-flat"type="submit" value="Cerrar sesion">
+                    </form>
+                    
+                  </div>
                   <div class="pull-right">
-                    <a href="#" class="btn btn-default btn-flat">Cerrar</a>
+                    <a href="{{url('home')}}" class="btn btn-default btn-flat">Home</a>
                   </div>
                 </li>
               </ul>
@@ -92,15 +103,36 @@
           <li class="header"></li>
           <li class="treeview">
             <a href="#">
-              <i class="fas fa-pen-fancy fa-lg"></i>
-              <span class="submenu-texto">-Entradas</span>
+              <i class="fas fa-tachometer-alt fa-lg"></i>
+              <span class="menu-texto">Escritorio</span>
               <i class="fa fa-angle-left pull-right"></i>
             </a>
             <ul class="treeview-menu">
-              <li><a href="{{url('productos')}}"><i class="fa fa-circle-o"></i> Todas las entradas</a></li>
-              <li><a href="{{url('nuevo-producto')}}"><i class="fa fa-circle-o"></i> Añadir nueva</a></li>
-              <li><a href="#"><i class="fa fa-circle-o"></i> Categorías</a></li>
-              <li><a href="#"><i class="fa fa-circle-o"></i> Etiquetas</a></li>
+              <li><a href="{{url('/blog-admin')}}"><i class="far fa-circle fa-sm"></i>
+                <span class="submenu-texto">Inicio</span>
+              </a></li>
+            </ul>
+          </li>
+
+          <li class="treeview">
+            <a href="#">
+              <i class="fas fa-pen-fancy fa-lg"></i>
+              <span class="menu-texto">Entradas</span>
+              <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="{{url('productos')}}"><i class="far fa-circle fa-sm"></i>
+                <span class="submenu-texto">Todas las entradas</span>
+              </a></li>
+              <li><a href="{{url('nuevo-producto')}}"><i class="far fa-circle fa-sm"></i>
+                <span class="submenu-texto"> Añadir nueva</span>
+              </a></li>
+              <li><a href="#"><i class="far fa-circle fa-sm"></i>
+                  <span class="submenu-texto">Categorías</span>
+                </a></li>
+              <li><a href="#"><i class="far fa-circle fa-sm"></i>
+                  <span class="submenu-texto">Etiquetas</span>
+                </a></li>
             </ul>
           </li>
 
@@ -111,8 +143,12 @@
               <i class="fa fa-angle-left pull-right"></i>
             </a>
             <ul class="treeview-menu">
-              <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Biblioteca</a></li>
-              <li><a href="compras/proveedor"><i class="fa fa-circle-o"></i> Añadir nuevo</a></li>
+              <li><a href="compras/ingreso"><i class="far fa-circle fa-sm"></i>
+                <span class="submenu-texto">Biblioteca</span>
+              </a></li>
+              <li><a href="compras/proveedor"><i class="far fa-circle fa-sm"></i>
+                <span class="submenu-texto">Añadir nuevo</span>
+              </a></li>
             </ul>
           </li>
 
