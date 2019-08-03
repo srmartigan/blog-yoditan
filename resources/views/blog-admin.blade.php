@@ -3,7 +3,7 @@
 @section('titulo','Admin -')
 
 @section('head')
-    {--Aqui podemos añadir librerias--}
+    {{--Aqui podemos añadir librerias--}}
 @endsection
 
 @section('contenido')
