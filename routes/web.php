@@ -15,10 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/blog-admin', function () {
-    return view('blog-admin');
-})->middleware('auth');
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/blog-admin', function () {
+    return view('blog-admin');
+})->middleware('auth','role:admin');
+
+
+
+

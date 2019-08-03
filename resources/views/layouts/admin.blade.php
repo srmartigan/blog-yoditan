@@ -40,7 +40,7 @@
       </a>
 
       <!-- Header Navbar: style can be found in header.less -->
-      <nav class="navbar navbar-static-top" role="navigation">
+      <nav class="navbar navbar-static-top " role="navigation">
         <!-- Sidebar toggle button-->
         <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
           <span class="sr-only ">Navegación</span>
@@ -81,7 +81,7 @@
                     
                   </div>
                   <div class="pull-right">
-                    <a href="{{url('home')}}" class="btn btn-default btn-flat">Home</a>
+                    <a href="{{url('/')}}" class="btn btn-default btn-flat">Home</a>
                   </div>
                 </li>
               </ul>
