@@ -1,0 +1,44 @@
+/*  Clase para los botones Formularios*/
+
+.btnForm {
+    color: black;
+    border-radius: 8px;
+}
+
+.ancho-corto {
+    width: 50%;
+}
+
+.columna {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    padding: 3%;
+    background-color: gainsboro;
+    border-radius: 8px;
+}
+
+.form-boton {
+    margin-top: 15px;
+    padding-left: 3%;
+}
+
+.titulo {
+    margin-top: 0px;
+    padding: 0;
+    font-size: 250%;
+    text-align: center;
+}
+
+.separador {
+    border-top: 3px solid black;
+}
+
+.menu-texto {
+    color: red;
+    font-size: 50px;
+}
+
+.submenu-texto {
+    font-size: 20px;
+}
