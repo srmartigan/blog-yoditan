@@ -7,8 +7,10 @@
   <title>@yield('titulo') blog yoditan</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <!-- Bootstrap 3.3.5 -->
-  <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+  <!-- Bootstrap 4 -->
+  <link rel="stylesheet" href="{{asset('css/app.css')}}">
+
+  
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{{asset('css/font-awesome.css')}}">
   <link rel="stylesheet" href="{{asset('css/all.css')}}">
@@ -19,8 +21,7 @@
   <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="{{asset('css/_all-skins.min.css')}}">
-  <link rel="apple-touch-icon" href="{{asset('img/apple-touch-icon.png')}}">
-  <link rel="shortcut icon" href="{{asset('img/favicon.ico')}}">
+  
   @yield('head') {{--Añadirmos js,css,img necesarias para la pagina--}}
 
 
@@ -49,20 +50,21 @@
         <div class="navbar-custom-menu">
           <ul class="nav navbar-nav">
             <!-- Messages: style can be found in dropdown.less-->
-            <ul class="navbar-nav mr-auto">
+            <ul class="nav nav-pills">
                   
             </ul>
 
             
+            
             <!-- User Account: style can be found in dropdown.less -->
-            <li class="dropdown user user-menu">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"role="button" aria-haspopup="true" aria-expanded="false">
                 <small class="bg-green">Online</small>
-                <span class="hidden-xs menu-texto">{{ Auth::user()->name }}</span>
+                <span class="menu-texto">{{ Auth::user()->name }}</span>
               </a>
               <ul class="dropdown-menu">
                 <!-- User image -->
-                <li class="user-header">
+                <li class="dropdown-item">
 
                   <p>
                     www.yoditan.com - Tutienda de colecciones y regalos
@@ -71,16 +73,16 @@
                 </li>
 
                 <!-- Menu Footer-->
-                <li class="user-footer">
+                <li class="dropdown-item user-footer">
 
-                  <div class="pull-left">
+                  <div class="dropdown-item pull-left">
                     <form action="{{url('logout')}}" method="post">
                         @csrf
                         <input class="btn btn-default btn-flat"type="submit" value="Cerrar sesion">
                     </form>
                     
                   </div>
-                  <div class="pull-right">
+                  <div class="dropdown-item pull-right">
                     <a href="{{url('/')}}" class="btn btn-default btn-flat">Home</a>
                   </div>
                 </li>
@@ -121,11 +123,11 @@
               <i class="fa fa-angle-left pull-right"></i>
             </a>
             <ul class="treeview-menu">
-              <li><a href="{{url('productos')}}"><i class="far fa-circle fa-sm"></i>
+              <li><a href="#"><i class="far fa-circle fa-sm"></i>
                 <span class="submenu-texto">Todas las entradas</span>
               </a></li>
-              <li><a href="{{url('nuevo-producto')}}"><i class="far fa-circle fa-sm"></i>
-                <span class="submenu-texto"> Añadir nueva</span>
+              <li><a href="{{url('blog-admin/nueva-entrada')}}"><i class="far fa-circle fa-sm"></i>
+                <span class="submenu-texto"> Nueva entrada</span>
               </a></li>
               <li><a href="#"><i class="far fa-circle fa-sm"></i>
                   <span class="submenu-texto">Categorías</span>

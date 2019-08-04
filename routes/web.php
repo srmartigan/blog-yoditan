@@ -18,9 +18,12 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/blog-admin', function () {
-    return view('blog-admin');
+    return view('blog-admin.blog-admin');
 })->middleware('auth','role:admin');
 
+Route::get('blog-admin/nueva-entrada', function () {
+    return view('blog-admin.nueva-entrada');
+})->middleware('auth','role:admin');
 
 
 
