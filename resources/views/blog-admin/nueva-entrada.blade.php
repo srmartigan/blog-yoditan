@@ -4,6 +4,7 @@
 
 @section('head')
     <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
+
 @endsection
 @section('titulo_ventana','Nueva Entrada')
 
@@ -26,9 +27,12 @@
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti dolorem tempora animi hic, vero labore totam nisi corrupti magni sint ad nemo eos perferendis blanditiis quas? Nesciunt soluta dolorum nam?
                             </textarea>
                             <script>
-                                // Replace the <textarea id="editor1"> with a CKEditor
-                                // instance, using default configuration.
-                                CKEDITOR.replace( 'editor1' );
+                                var options = {
+                                    filebrowserImageBrowseUrl: '../laravel-filemanager?',
+                                    filebrowserImageUploadUrl: '../laravel-filemanager/upload?type=Images&_token=',
+                                    filebrowserBrowseUrl: '../laravel-filemanager?type=Files',
+                                    filebrowserUploadUrl: '../laravel-filemanager/upload?type=Files&_token='
+                                };
                             </script>
                         </div>
                         <div class="form-group row pull-right">
@@ -44,5 +48,9 @@
         </div>
     </div>
 </div>
-
+<script>
+    // Replace the <textarea id="editor1"> with a CKEditor
+    // instance, using default configuration.
+    CKEDITOR.replace( 'editor1', options );
+</script>
 @endsection
