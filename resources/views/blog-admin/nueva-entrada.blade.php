@@ -3,9 +3,7 @@
 @section('titulo','Nueva entrada -')
 
 @section('head')
-
-
-
+    <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
 @endsection
 @section('titulo_ventana','Nueva Entrada')
 
@@ -16,22 +14,28 @@
             <div class="card">
                 <div class="card-header">Editor de entradas</div>
                 <div class="card-body">
-                    <form>
+                    <form href="{{ url('/blog-admin/nueva-entrada') }}" method="post" >
+                        @csrf
                         <div class="form-group">
                             <label for="titulo">Titulo</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput"
+                            <input type="text" name="titulo" class="form-control" id="formGroupExampleInput"
                                 placeholder="Añadir titulo">
                         </div>
                         <div class="form-group">
-                            <textarea name="" id="" cols="135" rows="10">
+                            <textarea class="form-control" name="contenido" id="editor1" cols="135" rows="10">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti dolorem tempora animi hic, vero labore totam nisi corrupti magni sint ad nemo eos perferendis blanditiis quas? Nesciunt soluta dolorum nam?
                             </textarea>
+                            <script>
+                                // Replace the <textarea id="editor1"> with a CKEditor
+                                // instance, using default configuration.
+                                CKEDITOR.replace( 'editor1' );
+                            </script>
                         </div>
                         <div class="form-group row pull-right">
                             <div class="col-sm-12">
-                              <button type="submit" class="btn btn-primary">Ver</button>
+                              <button type="submit" class="btn btn-primary" disabled>Ver</button>
                               <button type="submit" class="btn btn-primary">Guardar</button>
-                              <button type="submit" class="btn btn-primary">Publicar</button>
+                              <button type="submit" class="btn btn-primary" disabled>Publicar</button>
                             </div>
                         </div>
                     </form>
@@ -40,4 +44,5 @@
         </div>
     </div>
 </div>
+
 @endsection

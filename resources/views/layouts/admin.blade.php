@@ -10,7 +10,7 @@
   <!-- Bootstrap 4 -->
   <link rel="stylesheet" href="{{asset('css/app.css')}}">
 
-  
+
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{{asset('css/font-awesome.css')}}">
   <link rel="stylesheet" href="{{asset('css/all.css')}}">
@@ -21,7 +21,7 @@
   <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="{{asset('css/_all-skins.min.css')}}">
-  
+  @toastr_css
   @yield('head') {{--Añadirmos js,css,img necesarias para la pagina--}}
 
 
@@ -51,11 +51,11 @@
           <ul class="nav navbar-nav">
             <!-- Messages: style can be found in dropdown.less-->
             <ul class="nav nav-pills">
-                  
+
             </ul>
 
-            
-            
+
+
             <!-- User Account: style can be found in dropdown.less -->
             <li class="nav-item dropdown">
               <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"role="button" aria-haspopup="true" aria-expanded="false">
@@ -80,7 +80,7 @@
                         @csrf
                         <input class="btn btn-default btn-flat"type="submit" value="Cerrar sesion">
                     </form>
-                    
+
                   </div>
                   <div class="dropdown-item pull-right">
                     <a href="{{url('/')}}" class="btn btn-default btn-flat">Home</a>
@@ -236,5 +236,6 @@
   <script src="{{asset('js/app.min.js')}}"></script>
 
 </body>
-
+@toastr_js
+@toastr_render
 </html>
