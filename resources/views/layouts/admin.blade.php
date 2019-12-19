@@ -123,7 +123,7 @@
               <i class="fa fa-angle-left pull-right"></i>
             </a>
             <ul class="treeview-menu">
-              <li><a href="#"><i class="far fa-circle fa-sm"></i>
+              <li><a href="{{url('blog-admin/listado-entradas')}}"><i class="far fa-circle fa-sm"></i>
                 <span class="submenu-texto">Todas las entradas</span>
               </a></li>
               <li><a href="{{url('blog-admin/nueva-entrada')}}"><i class="far fa-circle fa-sm"></i>
@@ -214,7 +214,7 @@
             </div><!-- /.row -->
           </div><!-- /.box-body -->
         </div><!-- /.box -->
-    </div><!-- /.col -->
+      </section><!-- /.col -->
   </div><!-- /.row -->
 
   </section><!-- /.content -->

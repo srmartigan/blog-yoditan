@@ -23,7 +23,7 @@
                                 placeholder="Añadir titulo">
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" name="contenido" id="editor1" cols="135" rows="10">
+                            <textarea class="form-control" name="contenido" id="editor1">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti dolorem tempora animi hic, vero labore totam nisi corrupti magni sint ad nemo eos perferendis blanditiis quas? Nesciunt soluta dolorum nam?
                             </textarea>
                             <script>
@@ -31,7 +31,8 @@
                                     filebrowserImageBrowseUrl: '../laravel-filemanager?',
                                     filebrowserImageUploadUrl: '../laravel-filemanager/upload?type=Images&_token=',
                                     filebrowserBrowseUrl: '../laravel-filemanager?type=Files',
-                                    filebrowserUploadUrl: '../laravel-filemanager/upload?type=Files&_token='
+                                    filebrowserUploadUrl: '../laravel-filemanager/upload?type=Files&_token=',
+
                                 };
                             </script>
                         </div>
@@ -51,6 +52,11 @@
 <script>
     // Replace the <textarea id="editor1"> with a CKEditor
     // instance, using default configuration.
+    CKEDITOR.editorConfig = function( config ) {
+        config.uiColor = '#AADC6E';
+        config.autoGrow_minHeight = 600;
+    };
     CKEDITOR.replace( 'editor1', options );
+
 </script>
 @endsection
